@@ -1,6 +1,6 @@
 package com.skilldistillery.filmquery.entities;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Film {
@@ -15,7 +15,10 @@ public class Film {
 	private int length;
 	private double replacementCost;
 	private String rating;
-	private String special_features; //Maybe need to be changed??
+	private String special_features;
+	private ArrayList<Actor> actors;
+	
+	
 	public Film() {
 		super();
 	}
@@ -109,8 +112,8 @@ public class Film {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(description, id, languageId, length, rating, releaseYear, rentalDuration,
-				rentalRate, replacementCost, special_features, title);
+		return Objects.hash(description, id, languageId, length, rating, releaseYear, rentalDuration, rentalRate,
+				replacementCost, special_features, title);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -121,12 +124,18 @@ public class Film {
 		if (getClass() != obj.getClass())
 			return false;
 		Film other = (Film) obj;
-		return Objects.equals(actors, other.actors) && Objects.equals(description, other.description) && id == other.id
-				&& languageId == other.languageId && length == other.length && Objects.equals(rating, other.rating)
-				&& releaseYear == other.releaseYear && rentalDuration == other.rentalDuration
+		return Objects.equals(description, other.description) && id == other.id && languageId == other.languageId
+				&& length == other.length && Objects.equals(rating, other.rating) && releaseYear == other.releaseYear
+				&& rentalDuration == other.rentalDuration
 				&& Double.doubleToLongBits(rentalRate) == Double.doubleToLongBits(other.rentalRate)
 				&& Double.doubleToLongBits(replacementCost) == Double.doubleToLongBits(other.replacementCost)
 				&& Objects.equals(special_features, other.special_features) && Objects.equals(title, other.title);
+	}
+	public ArrayList<Actor> getActors() {
+		return actors;
+	}
+	public void setActors(ArrayList<Actor> actors) {
+		this.actors = actors;
 	}
 		
 }
