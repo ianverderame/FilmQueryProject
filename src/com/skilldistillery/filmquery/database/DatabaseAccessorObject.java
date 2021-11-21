@@ -94,7 +94,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		ArrayList<Film> films = new ArrayList<>();
 		String user = "student";
 		String pass = "student";
-		
+
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 			String sql = "SELECT id, title, description, release_year, language_id, rental_duration, ";

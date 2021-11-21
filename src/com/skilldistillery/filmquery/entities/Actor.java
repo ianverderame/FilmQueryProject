@@ -42,7 +42,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return (firstName + " "+ lastName) + "(ID# " + id + ")";
+		return (firstName + " " + lastName) + "(ID# " + id + ")";
 	}
 
 	@Override
